@@ -1,16 +1,16 @@
 
-static set: &'static[f32] = &[3.0, 5.0, 7.0, 9.0, 11.0, 13.0, 15.0, 17.0, 19.0, 21.0];
-const negTao: f32 = -6.28;
-const Tao: f32 = 6.28;
+static SET: &'static[f32] = &[3.0, 5.0, 7.0, 9.0, 11.0, 13.0, 15.0, 17.0, 19.0, 21.0];
+const NEG_TAO: f32 = -6.28;
+const TAO: f32 = 6.28;
 
 
 fn main() {
     let c = 9.42;
     let first = c.to_string().chars().nth(0).unwrap(); 
-    //for (a, b) in set.iter().enumerate(){
-    //    println!("value {}, number {}", b, a);
-    //}
-    println!("{}", constrain(c, first));
+    let number: f32 = 2.0;
+    for (a, b) in SET.iter().enumerate(){
+        println!("{}", number.powf(*b))
+    }
 }
 
 //puts the value between -2PI and 2PI 
@@ -20,15 +20,13 @@ fn main() {
 fn constrain(num: f32, first: char) -> f32{
     let mut reduced = num;
     if first == '-'{
-        while reduced < negTao{
-            reduced += Tao;
-            println!("{}", reduced);
+        while reduced < NEG_TAO{
+            reduced += TAO;
         }
     }
     else{
-        while reduced > Tao{
-            reduced -= Tao;
-            println!("{}", reduced)
+        while reduced > TAO{
+            reduced -= TAO;
         }
     }
     return reduced;
