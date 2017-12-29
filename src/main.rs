@@ -7,7 +7,10 @@ fn factorial(num: i32) -> i32{
     }
 }
 
+static set: &'static[f32] = &[3.0, 5.0, 7.0, 9.0, 11.0, 13.0, 15.0, 17.0];
+
 fn main() {
-    let num = factorial(5);
-    println!("{}", num);
+    for (a, b) in set.iter().enumerate(){
+        println!("value {}, number {}", b, a);
+    }
 }
