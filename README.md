@@ -16,11 +16,11 @@ According to Wikipedia the defintion is :
 ### My Equation
 
 I figured that my series only has to be acurate between the range of -2PI and 2PI. The most accurate i could get it was up to 21. 
-![Alt text](https://imgur.com/hd0y6CN "My Equation")
+![Alt text](https://i.imgur.com/hd0y6CN.png "My Equation")
 
 ### My Graph
 
-![Alt text](https://imgur.com/BWbllA6 "My Graph")
+![Alt text](https://i.imgur.com/BWbllA6.png "My Graph")
 
 
 
