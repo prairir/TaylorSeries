@@ -16,6 +16,7 @@ According to Wikipedia the defintion is :
 ### My Equation
 
 I figured that my series only has to be acurate between the range of -2PI and 2PI. The most accurate i could get it was up to 21. 
+
 ![Alt text](https://i.imgur.com/hd0y6CN.png "My Equation")
 
 ### My Graph
