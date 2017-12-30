@@ -1,16 +1,27 @@
 
 static SET: &'static[f32] = &[3.0, 5.0, 7.0, 9.0, 11.0, 13.0, 15.0, 17.0, 19.0, 21.0];
-const NEG_TAO: f32 = -6.28;
-const TAO: f32 = 6.28;
+const NEG_TAO: f32 = -6.2832;
+const TAO: f32 = 6.2832;
 
 
 fn main() {
-    let c = 9.42;
+    let mut c = 3.0;
     let first = c.to_string().chars().nth(0).unwrap(); 
-    let number: f32 = 2.0;
+    c = constrain(c, first);
+    let mut output = c;
     for (a, b) in SET.iter().enumerate(){
-        println!("{}", number.powf(*b))
+        println!("{}, {}", a, b);
+        if (a + 1) % 2 == 0{
+            output += (c.powf(*b) / factorial(*b));
+            println!("{}", output);
+        }
+        else{
+            output -= (c.powf(*b) / factorial(*b));
+            println!("{}", output);
+        }    
     }
+
+    println!("{}", output);
 }
 
 //puts the value between -2PI and 2PI 
