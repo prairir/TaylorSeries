@@ -13,4 +13,15 @@ According to Wikipedia the defintion is :
 #### Equation
 ![Alt text](https://wikimedia.org/api/rest_v1/media/math/render/svg/3e8311bbbeac9364f73b437929aa85c71715a7a8 "Simple Series")
 
+### My Equation
+
+I figured that my series only has to be acurate between the range of -2PI and 2PI. The most accurate i could get it was up to 21. 
+![Alt text](https://imgur.com/a/BXuiG "My Equation")
+
+### My Graph
+
+![Alt text](https://imgur.com/a/ymz42 "My Graph")
+
+
+
 
