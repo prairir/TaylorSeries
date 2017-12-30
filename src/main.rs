@@ -5,23 +5,20 @@ const TAO: f32 = 6.2832;
 
 
 fn main() {
-    let mut c = 3.0;
+    let mut c = 3.14159;
     let first = c.to_string().chars().nth(0).unwrap(); 
     c = constrain(c, first);
     let mut output = c;
     for (a, b) in SET.iter().enumerate(){
-        println!("{}, {}", a, b);
         if (a + 1) % 2 == 0{
             output += (c.powf(*b) / factorial(*b));
-            println!("{}", output);
         }
         else{
             output -= (c.powf(*b) / factorial(*b));
-            println!("{}", output);
         }    
     }
 
-    println!("{}", output);
+    println!("{:.5}", output);
 }
 
 //puts the value between -2PI and 2PI 
