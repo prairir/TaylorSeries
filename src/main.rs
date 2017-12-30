@@ -1,3 +1,5 @@
+use std::env;
+
 
 static SET: &'static[f32] = &[3.0, 5.0, 7.0, 9.0, 11.0, 13.0, 15.0, 17.0, 19.0, 21.0];
 const NEG_TAO: f32 = -6.2832;
@@ -5,16 +7,20 @@ const TAO: f32 = 6.2832;
 
 
 fn main() {
-    let mut c = 3.14159;
-    let first = c.to_string().chars().nth(0).unwrap(); 
-    c = constrain(c, first);
+    //gets arguments from cli
+    let args: Vec<String> = env::args().collect();
+    let arg: f32 = args[1].parse().unwrap();
+    let first = arg.to_string().chars().nth(0).unwrap(); 
+    let c = constrain(arg, first);
+    //isolates for the first character
     let mut output = c;
-    for (a, b) in SET.iter().enumerate(){
-        if (a + 1) % 2 == 0{
-            output += (c.powf(*b) / factorial(*b));
+    //main loop to calculate the taylor series
+    for (count, setValue) in SET.iter().enumerate(){
+        if (count + 1) % 2 == 0{
+            output += (c.powf(*setValue) / factorial(*setValue));
         }
         else{
-            output -= (c.powf(*b) / factorial(*b));
+            output -= (c.powf(*setValue) / factorial(*setValue));
         }    
     }
 
