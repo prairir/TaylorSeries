@@ -15,12 +15,12 @@ fn main() {
     //isolates for the first character
     let mut output = c;
     //main loop to calculate the taylor series
-    for (count, setValue) in SET.iter().enumerate(){
+    for (count, set_value) in SET.iter().enumerate(){
         if (count + 1) % 2 == 0{
-            output += (c.powf(*setValue) / factorial(*setValue));
+            output += c.powf(*set_value) / factorial(*set_value);
         }
         else{
-            output -= (c.powf(*setValue) / factorial(*setValue));
+            output -= c.powf(*set_value) / factorial(*set_value);
         }    
     }
 
