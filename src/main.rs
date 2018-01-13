@@ -9,7 +9,7 @@ const TAO: f32 = 6.2832;
 fn main() {
     //gets arguments from cli
     let args: Vec<String> = env::args().collect();
-    let arg: f32 = args[1].parse().unwrap();
+    let arg: f32 = args[1].parse().expect("Needs To Be A Number");
     let first = arg.to_string().chars().nth(0).unwrap(); 
     let c = constrain(arg, first);
     //isolates for the first character
