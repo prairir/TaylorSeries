@@ -12,7 +12,7 @@ const TAO: f32 = 6.2832;
 
 const USAGE: &'static str = "
 taylor
-generates an aproximate of sin using taylor series
+Generates an estimate sin using a taylor series
 
 Usage:
     taylor <number>
