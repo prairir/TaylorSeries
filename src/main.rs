@@ -1,15 +1,38 @@
-use std::env;
+#[macro_use]
+extern crate serde_derive;
+extern crate docopt;
 
+
+use docopt::Docopt;
 
 static SET: &'static[f32] = &[3.0, 5.0, 7.0, 9.0, 11.0, 13.0, 15.0, 17.0, 19.0, 21.0];
 const NEG_TAO: f32 = -6.2832;
 const TAO: f32 = 6.2832;
 
 
+const USAGE: &'static str = "
+taylor
+generates an aproximate of sin using taylor series
+
+Usage:
+    taylor <number>
+    taylor (-h | --help)
+
+Options:
+    -h, --help      Shows this screen.
+";
+
+#[derive(Debug, Deserialize)]
+struct Args {
+   arg_number: f32,
+}
+
 fn main() {
     //gets arguments from cli
-    let args: Vec<String> = env::args().collect();
-    let arg: f32 = args[1].parse().expect("Needs To Be A Number");
+    let args: Args = Docopt::new(USAGE).
+        and_then(|d| d.deserialize()).
+        unwrap_or_else(|e| e.exit());
+    let arg = args.arg_number;
     let first = arg.to_string().chars().nth(0).unwrap(); 
     let c = constrain(arg, first);
     //isolates for the first character
@@ -23,9 +46,9 @@ fn main() {
             output -= c.powf(*set_value) / factorial(*set_value);
         }    
     }
-
     println!("{:.5}", output);
 }
+
 
 //puts the value between -2PI and 2PI 
 //
